@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="ISO-8859-1">   
     <title>Edit Employee</title>
@@ -14,7 +14,7 @@
                     <td>Employee ID : </td>
                     <td><input type="text" th:field="*{eid}" readonly="readonly"/></td>
                 </tr>
-                <tr>
+                <tr sec:authorize="hasAnyAuthority('ADMIN')">
                     <td>Employee Name : </td>
                     <td><input type="text" th:field="*{ename}"/></td>
                 </tr>
@@ -22,7 +22,8 @@
                     <td>Phone Number : </td>
                     <td><input type="text" th:field="*{enumber}"/></td>
                 </tr>
-                <tr>
+
+                <tr sec:authorize="hasAnyAuthority('ADMIN')">
                     <td>E-mail : </td>
                     <td><input type="text" th:field="*{email}"/></td>
                 </tr>

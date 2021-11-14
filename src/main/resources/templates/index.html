@@ -6,9 +6,20 @@
 </head>
 <body>
     <div align="center">
-        <h1>Employee List</h1>      
-        
-            <a href="/new"> Add New Employee</a>        
+        <h1>Employee List</h1>
+
+        <div sec:authorize="isAuthenticated()">
+            Welcome <b><span sec:authentication="name">Username</span></b>&nbsp;
+            <i><span sec:authentication="principal.authorities">Roles</span></i>
+        </div>
+
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Logout"/>
+        </form>
+
+        <div sec:authorize="hasAnyAuthority('ADMIN')">
+            <a href="/new"> Add New Employee</a>
+        </div>
         
         <table border="1" cellpadding="10"> 
             <thead>
@@ -16,21 +27,21 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Phone Number</th>
-                    <th>E-mail</th>
-                    <th>Action</th>
+                    <th>E-Mail</th>
+                    <th sec:authorize="hasAnyAuthority('ADMIN')" >Action</th>
                 </tr>
             </thead>
             <tbody>
                 <tr th:each="employee : ${listEmployee}">
-					<td th:text="${employee.eid}">Employee ID</td>
-					<td th:text="${employee.ename}">Employee Name</td>
+					<td th:text="${employee.eid}"> ID</td>
+					<td th:text="${employee.ename}">Name</td>
 					<td th:text="${employee.enumber}">Phone Number</td> 
-                    <td th:text="${employee.email}">E-Mail</td> 
+                    <td th:text="${employee.email}">E-mail</td> 
                     <td>
-                        <div>
+                        <div sec:authorize="hasAnyAuthority('USER','ADMIN')">
                             <a th:href="@{'/edit/' + ${employee.eid}}">Edit</a>
                         </div>&nbsp;&nbsp;&nbsp;                                               
-                        <div>
+                        <div sec:authorize="hasAnyAuthority('ADMIN')">
                             <a th:href="@{'/delete/' + ${employee.eid}}">Delete</a>
                         </div>
                         
