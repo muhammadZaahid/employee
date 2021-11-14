@@ -1,5 +1,11 @@
 package com.zaahid.employee.repository;
 
-public class EmployeeRepository {
+import com.zaahid.employee.model.Employee;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     
 }
