@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="ISO-8859-1">   
+    <title>Employee Information</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Employee List</h1>      
+        
+            <a href="/new"> Add New Employee</a>        
+        
+        <table border="1" cellpadding="10"> 
+            <thead>
+                <tr> 
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>E-mail</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="employee : ${listEmployee}">
+					<td th:text="${employee.eid}">Employee ID</td>
+					<td th:text="${employee.ename}">Employee Name</td>
+					<td th:text="${employee.ename}">Phone Number</td> 
+                    <td th:text="${employee.email}">E-Mail</td> 
+                    <td>
+                        <div>
+                            <a th:href="@{'/edit/' + ${employee.sid}}">Edit</a>
+                        </div>&nbsp;&nbsp;&nbsp;                                               
+                        <div>
+                            <a th:href="@{'/delete/' + ${employee.sid}}">Delete</a>
+                        </div>
+                        
+                    </td>                                      
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
