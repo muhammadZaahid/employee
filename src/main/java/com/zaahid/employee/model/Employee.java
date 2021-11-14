@@ -15,6 +15,32 @@ public class Employee {
     private String ename;
     private String enumber;
     private String email;
+    public Long getEid() {
+        return eid;
+    }
+    public void setEid(Long eid) {
+        this.eid = eid;
+    }
+    public String getEname() {
+        return ename;
+    }
+    public void setEname(String ename) {
+        this.ename = ename;
+    }
+    public String getEnumber() {
+        return enumber;
+    }
+    public void setEnumber(String enumber) {
+        this.enumber = enumber;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     
     
+
 }
