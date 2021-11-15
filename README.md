@@ -10,6 +10,41 @@ This application is made using the java programming language using the spring fr
 
 
 3. **Tools**
+
     a. Visual Studio Code
+    b. h2 Console
+  
+4. **Build and Deployment**
+
+    a. Activate h2 console
+    
+    b. Add datasource url to connect database
+    
+    c. Run java main class
+    
+    d. Test API with Postman on localhost://8080
+    
+
+After testing the API in postman and all the functions are working fine, I created a simple view for the API implementation
+
+**Login Page**
+
+![login spring](https://user-images.githubusercontent.com/60879876/141715869-ef809263-e13f-4d5e-916e-5930ed4c05d5.PNG)
+
+**Login as a User**
+
+![login as a user](https://user-images.githubusercontent.com/60879876/141715915-4a397f9c-1ca6-4630-8270-d29b89c38d6d.PNG)
+
+**Edit as a User**
+
+![edit as a user](https://user-images.githubusercontent.com/60879876/141715976-cbf5b561-d580-4a38-983c-0f6573af9f52.PNG)
+
+**Login as a Admin**
+
+![login as a admin](https://user-images.githubusercontent.com/60879876/141715991-da5a4541-1046-4871-a442-4551aa725c18.PNG)
+
+**Edit as a Admin**
+
+![edit as admin](https://user-images.githubusercontent.com/60879876/141716228-7ed1329c-5f43-4f7e-a41d-2c7b0b02894d.PNG)
 
 
